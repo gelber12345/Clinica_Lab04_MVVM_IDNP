@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.idnp.lab04mvvm.viewmodel.MainViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vistaMain"
+        tools:context=".ui.MainActivity">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:textColor="#ffffff"
+                android:text="Menu Principal"
+                android:textAlignment="center"
+                android:background="#536dfe"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/textMenu"
+                android:text="Correo"
+                android:textSize="15dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:background="#236fdd"
+                android:onClick="@{()->viewModel.enviarCorreo(2)}"/>
+
+            <Button
+                android:id="@+id/btnPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:layout_below="@id/textMenu"
+                android:text="Pacientes"
+                android:textSize="15dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:onClick="@{()->viewModel.addClient(0)}"
+                />
+            <Button
+                android:id="@+id/btnVisita"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/btnPaciente"
+                android:text="Visitas"
+                android:textSize="15dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:onClick="@{()->viewModel.addVisit(1)}"
+                />
+
+            <TextView
+                android:id="@+id/txtLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnVisita"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:text="Datos"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/txtTabla"
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50dp"
+                android:layout_below="@+id/txtLista"
+                android:layout_marginTop="20dp"
+                android:background="#236fdd"
+                android:text="@={viewModel.txt}"
+                />
+
+        </RelativeLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

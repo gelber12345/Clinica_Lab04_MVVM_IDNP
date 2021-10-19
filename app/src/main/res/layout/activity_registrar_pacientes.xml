@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.idnp.lab04mvvm.viewmodel.RegistrarPacientesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.RegistrarPacientes">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+
+                >
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Registro de Paciente"
+                    android:textSize="30dp"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:background="#5E7FF7"/>
+
+                <LinearLayout
+                    android:id="@+id/formulario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="50dp"
+                    android:layout_below="@+id/txtTitulo"
+                    >
+                    <TextView
+                        android:id="@+id/txtDni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingrese el DNI:"
+                        />
+
+                    <EditText
+                        android:id="@+id/etDni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtDni"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:text="@={viewModel.dni}">
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/txtNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingrese el Nombre del Paciente:"
+                        />
+
+                    <EditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:layout_below="@+id/txtNombre"
+                        android:text="@={viewModel.nombre}">
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/txtDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingrese la Direccion del Paciente:"
+                        />
+
+                    <EditText
+                        android:id="@+id/etDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:layout_below="@+id/txtDireccion"
+                        android:text="@={viewModel.direccion}">
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/txtCorreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingrese el correo del Paciente:"
+                        />
+
+                    <EditText
+                        android:id="@+id/etCorreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:layout_below="@+id/txtCorreo"
+                        android:text="@={viewModel.correo}">
+                    </EditText>
+
+                    <ImageButton
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/save"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:scaleType="fitCenter"
+                        android:layout_below="@+id/formulario"
+                        android:onClick="@{()->viewModel.saveCliente()}"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

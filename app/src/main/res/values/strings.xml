@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Lab04Mvvm</string>
+    <!-- PACIENTES -->
+    <string name="cliente_creado">Cliente Registrado con exito</string>
+    <string name="cliente_no_creado">No se ha registrado al Cliente</string>
+    <string name="no_cliente">No ha registrado algun cliente</string>
+    <string name="dni_invalido">Ingrese un DNI valido</string>
+    <string name="correo_invalido">Ingrese un Correo valido</string>
+    <string name="direccion_invalida">Ingrese una Direccion valida</string>
+    <string name="nombre_invalido">Ingrese un Nombre valido</string>
+
+    <!-- VISITAS -->
+    <string name="visita_creada">Visita Registrada con exito</string>
+    <string name="visita_no_creada">No se ha registrado la visita</string>
+    <string name="peso_invalido">Ingrese un Peso valido</string>
+    <string name="saturacion_invalida">Ingrese una Saturacion valida</string>
+    <string name="temperatura_invalida">Ingrese una Temperatura valida</string>
+    <string name="presion_invalida">Ingrese una Presion valida</string>
+
+
+
+</resources>
